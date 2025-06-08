@@ -7,6 +7,9 @@ const router = express.Router();
 
 router.post("/register", register);
 router.post("/login", login);
+router.post("/logout", authMiddleware, (req, res) => {
+  res.status(200).json({ message: "Logout successful" });
+});
 //test
 router.get("/protected", authMiddleware, (req, res) => {
   res

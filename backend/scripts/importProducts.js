@@ -12,6 +12,7 @@ const products = rawData.map(({ _id, ...rest }) => rest);
 const importData = async () => {
   try {
     await mongoose.connect(process.env.MONGO_URI);
+    await Product.deleteMany();
     await Product.insertMany(products);
     console.log("✅ Products imported!");
     process.exit();
