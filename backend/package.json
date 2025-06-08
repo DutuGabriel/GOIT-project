@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "import:products": "node scripts/importProducts.js"
   },
   "dependencies": {
     "bcryptjs": "^3.0.2",
