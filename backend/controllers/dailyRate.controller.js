@@ -5,16 +5,6 @@ export const calculateDailyRatePublic = async (req, res) => {
   try {
     const { height, age, currentWeight, desiredWeight, bloodType } = req.body;
 
-    if (
-      !height ||
-      !age ||
-      !currentWeight ||
-      !desiredWeight ||
-      bloodType == null
-    ) {
-      return res.status(400).json({ message: "All fields are required" });
-    }
-
     const recommendedCalories = Math.round(
       10 * currentWeight +
         6.25 * height -
@@ -38,16 +28,6 @@ export const getPrivateDailyRate = async (req, res) => {
   try {
     const { height, age, currentWeight, desiredWeight, bloodType } = req.body;
 
-    if (
-      !height ||
-      !age ||
-      !currentWeight ||
-      !desiredWeight ||
-      bloodType === undefined
-    ) {
-      return res.status(400).json({ message: "All fields are required" });
-    }
-
     const dailyRate = Math.round(
       10 * currentWeight +
         6.25 * height -
@@ -59,7 +39,7 @@ export const getPrivateDailyRate = async (req, res) => {
     const index = Number(bloodType);
     const notAllowedProducts = await Product.find({
       [`groupBloodNotAllowed.${index}`]: true,
-    });
+    }).select("title categories -_id");
 
     await User.findByIdAndUpdate(req.user.id, {
       dailyRate,
