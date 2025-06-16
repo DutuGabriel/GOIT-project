@@ -1,0 +1,157 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(33, 33, 33, 0.12);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-container {
+  position: relative;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: "Verdana", sans-serif;
+  border-radius: 8px;
+  padding: 40px 30px;
+  width: 90%;
+  max-width: 500px;
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+  .modal-container {
+    max-width: 300px;
+    padding: 20px 15px;
+  }
+
+  .modal-close {
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+  }
+
+  .modal-calories {
+    font-size: 28px;
+  }
+
+  .modal-cta {
+    font-size: 12px;
+    padding: 10px 20px;
+  }
+}
+
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .modal-container {
+    max-width: 400px;
+    padding: 30px 25px;
+  }
+
+  .modal-close {
+    top: 16px;
+    right: 20px;
+    font-size: 22px;
+  }
+
+  .modal-calories {
+    font-size: 30px;
+  }
+
+  .modal-cta {
+    font-size: 14px;
+    padding: 12px 24px;
+  }
+}
+
+/* DESKTOP (1280px+) */
+@media (min-width: 1280px) {
+  .modal-container {
+    max-width: 500px;
+    padding: 40px 30px;
+  }
+
+  .modal-close {
+    top: 20px;
+    right: 25px;
+    font-size: 24px;
+  }
+
+  .modal-calories {
+    font-size: 32px;
+  }
+
+  .modal-cta {
+    font-size: 16px;
+    padding: 14px 28px;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
+.modal-subtitle {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #264061;
+}
+
+.modal-calories {
+  font-weight: 700;
+  text-align: center;
+  color: #264061;
+  margin-bottom: 20px;
+}
+
+.unit {
+  font-size: 14px;
+  margin-left: 4px;
+}
+
+.modal-list-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e7e7e7;
+  padding-bottom: 4px;
+}
+
+.modal-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+  color: #9b9faa;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.modal-list li {
+  margin-bottom: 6px;
+}
+
+.modal-cta {
+  display: block;
+  margin: 0 auto;
+  background: #fc842d;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.modal-cta:hover {
+  background: #e5731c;
+}
